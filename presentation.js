@@ -1,8 +1,9 @@
 
+let data;
 let readline = require("readline");
 let service = require("./service.js");
 
-var rl = readline.createInterface({
+let rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
@@ -31,7 +32,8 @@ function start() {
             // start et return
             //console.log(service.getListData());
             service.getListData();
-            //console.log(service.data);
+            displayData(data);
+            //console.log(data);
             //start();
             return;
         }
@@ -50,4 +52,14 @@ function displayMenu() {
     console.log("99. Sortir");
 }
 
+function setData(dataToImport) {
+    data = dataToImport;
+}
+
+function displayData(dataToDisplay) {
+    let toDisplay = JSON.stringify(dataToDisplay);
+    console.log(toDisplay);
+}
+
 exports.start = start;
+exports.setData = setData;

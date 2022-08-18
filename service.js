@@ -20,8 +20,8 @@ function getListData() {
         
         // body contient les données récupérées
         console.log(body);
-        //return body;
-        
+        //return (body);
+        //presentation.setData(body);
         presentation.start();
         return;
         });
