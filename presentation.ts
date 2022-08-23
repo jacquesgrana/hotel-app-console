@@ -19,34 +19,8 @@ export class Presentation {
     constructor() {}
 
     start() {
-
-        //let response;
-       
         displayMenu();
         this.generalMenu();
-/*
-        rl.question("Saisir votre choix : ", function (response : any) {
-            //console.log("response :", response);
-            if (response == "99") {
-                quit();
-            } else if (response == "1") {
-                console.log("Liste des clients :");
-                console.log("");
-                service.getListData.then((jsondata) => {
-                    //console.log(jsondata);
-                    loadDatas(jsondata, data);
-                    let presentation = new Presentation();
-                    presentation.start();
-                })
-                .catch((e) => {console.log('erreur : ' + e)});
-                
-                //displayData(data);
-                //return;
-            } else if (response == "2") {
-
-            }
-
-        });*/
     }
     
     generalMenu () {
@@ -73,7 +47,7 @@ export class Presentation {
 
         });
     }
-    
+    /*
     setData(dataToImport : any) {
         data = dataToImport;
     }
@@ -82,7 +56,7 @@ export class Presentation {
         let toDisplay = JSON.stringify(dataToDisplay);
         console.log(toDisplay);
     }
-
+*/
     
 
 }
@@ -123,7 +97,7 @@ function searchMenu() {
             //console.log(jsondata);
             //loadDatas(jsondata, data);
             data = jsondata.map((d:any) => {return {id: d.id, name: d.name, username: d.username, email:d.email}});
-            data  = jsondata.filter((d:any) => d.username = response)[0];
+            data  = jsondata.filter((d:any) => d.username == response)[0];
             console.log("User : id : " + data.id + " / name : " + data.name + " / username : " + data.username + " / email : " + data.email);
 
             let presentation = new Presentation();
